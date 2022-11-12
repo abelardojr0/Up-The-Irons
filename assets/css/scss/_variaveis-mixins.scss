@@ -1,0 +1,66 @@
+// CORES
+$corBody: #1d232a;
+
+$corHeader: #1d232a;
+
+$corHeaderMobile: #15191c;
+
+$corMenuLateral: #15191c;
+
+$corCartao: #2c343a;
+
+$fontePrincipal: #ffffff;
+
+$fonteAlternativa: #95999c;
+
+$corLinks: #0480dc;
+
+$corBotao: rgb(224, 12, 12);
+
+//ICONES
+
+$inicio: "\e88a";
+$albuns: "\e1c4";
+$lives: "\e04b";
+$coletaneas: "\e04a";
+$singles: "\e405";
+$clipes: "\ef5b";
+$ep: "\e03d";
+$box: "\e97f";
+$album: "\e063";
+$bootlegs: "\e044";
+$tributos: "\e83b";
+$solo: "\ef5a";
+$formacoes: "\e83b";
+$integrantes: "\e03f";
+
+$menu: "\e5d2";
+$pesquisa: "\e8b6";
+$seta-baixo: "\e5cf";
+$relogio: "\e8b5";
+$visualizacao: "\e8f4";
+$play: "\e037";
+$Comprar: "\e2c4";
+
+//MIXINS
+@mixin sombra() {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
+}
+$font: "Roboto", "Material Icons", sans-serif;
+
+@mixin font($tamanho) {
+  font-family: $font;
+  @if $tamanho == pequeno0 {
+    font-size: 0.7rem;
+  } @else if $tamanho == pequeno1 {
+    font-size: 0.9rem;
+  } @else if $tamanho == pequeno2 {
+    font-size: 1.2rem;
+  } @else if $tamanho == medio {
+    font-size: 1.5rem;
+  } @else if $tamanho == medio2 {
+    font-size: 2rem;
+  } @else if $tamanho == grande {
+    font-size: 3rem;
+  }
+}

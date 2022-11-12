@@ -1,0 +1,125 @@
+// MENU LATERAL ----------------------------------------------------------
+.menu-lateral {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: $corMenuLateral;
+  background-image: url(../img/fundo2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 2px solid black;
+  font-size: 0.9rem;
+  width: 50vw;
+  max-height: 100vh;
+  position: absolute;
+  left: -100vw; //COMEÇA ESCONDIDO
+  transition: 0.5s;
+  border-radius: 8px;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+  img {
+    margin-top: 16px;
+    width: 150px;
+    align-self: center;
+    @include d(g) {
+      margin: 0 auto;
+      margin-top: 20px;
+    }
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  a {
+    height: 9vh;
+    color: $fonteAlternativa;
+    display: flex;
+    align-items: center;
+    @include font(pequeno2);
+    padding-left: 45px;
+    &::before {
+      content: "";
+      width: 24px;
+      height: 24px;
+      font-size: 24px;
+      position: absolute;
+      left: 15px;
+      font-family: "Material Icons";
+    }
+    &.menu-lateral-inicio::before {
+      content: $inicio;
+    }
+    &.menu-lateral-albuns::before {
+      content: $albuns;
+    }
+    &.menu-lateral-lives::before {
+      content: $lives;
+    }
+    &.menu-lateral-coletaneas::before {
+      content: $coletaneas;
+    }
+    &.menu-lateral-singles::before {
+      content: $singles;
+    }
+    &.menu-lateral-clipes::before {
+      content: $clipes;
+    }
+    &.menu-lateral-ep::before {
+      content: $ep;
+    }
+    &.menu-lateral-box::before {
+      content: $box;
+    }
+    &.menu-lateral-video-album::before {
+      content: $album;
+    }
+    &.menu-lateral-bootlegs::before {
+      content: $bootlegs;
+    }
+    &.menu-lateral-tributos::before {
+      content: $tributos;
+    }
+    &.menu-lateral-carreira-solo::before {
+      content: $solo;
+    }
+    &.menu-lateral-formacoes::before {
+      content: $formacoes;
+    }
+    &.menu-lateral-integrantes::before {
+      content: $integrantes;
+    }
+    &.ativo {
+      //BARRINHA BRANCA DO LADO
+      color: $fontePrincipal;
+      border-left: 8px solid $fontePrincipal;
+      padding-left: 50px;
+    }
+    &:hover {
+      color: $fontePrincipal;
+      padding-left: 50px;
+    }
+    @include d(m) {
+      @include font(medio);
+    }
+    @include d(g) {
+      @include font(pequeno2);
+    }
+  }
+
+  &.ativo {
+    left: 0px; // APARECE
+    transition: 0.5s;
+  }
+  @include d(m) {
+    width: 200px;
+  }
+  @include d(g) {
+    position: fixed;
+    width: 200px;
+    height: 100vh;
+    left: 0px;
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    z-index: 2;
+  }
+}

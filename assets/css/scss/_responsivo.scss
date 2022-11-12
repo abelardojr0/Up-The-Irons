@@ -1,0 +1,15 @@
+$mobile: 480px;
+$tablet: 800px;
+$desktop: 1440px;
+
+@mixin d($tamanho) {
+  @if $tamanho == g {
+    @media ((min-width: $desktop)) {
+      @content;
+    }
+  } @else if $tamanho == m {
+    @media (min-width: $tablet) and (max-width: #{$desktop - 1}) {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: "Iron Maiden";
+  src: url(../font/maiden.ttf);
+}
+body {
+  box-sizing: border-box;
+  background-color: $corBody;
+  background-image: url(../img/fundo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: $fontePrincipal;
+  font-family: $font;
+  @include d(g) {
+    display: grid;
+    grid-template-columns: auto auto;
+    overflow-x: hidden;
+  }
+}
+
+// TITULO --------------------------------------------------------------
+.titulo-pagina {
+  grid-area: titulo-pagina;
+  @include font(grande);
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  @include d(g) {
+    margin-top: 100px;
+    margin-left: 50px;
+  }
+}

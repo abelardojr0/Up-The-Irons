@@ -1,0 +1,109 @@
+//HEADER-------------------------------------------------------------------
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: url(../img/fundo2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 2px solid black;
+  padding: 8px;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+  @include sombra;
+  position: relative;
+  img {
+    margin-top: 10px;
+    max-width: 200px;
+    @include d(m) {
+      width: 300px;
+      position: absolute;
+      top: 10px;
+      left: 45%;
+    }
+    @include d(g) {
+      width: 400px;
+      position: absolute;
+      top: 10px;
+      left: 45%;
+    }
+  }
+  @include d(m) {
+    padding: 10px 20px;
+  }
+  @include d(g) {
+    background-color: $corHeaderMobile;
+    gap: 32px;
+    justify-content: flex-end;
+    padding: 16px 30px;
+    height: 80px;
+    box-sizing: border-box;
+    grid-row: 1;
+    grid-column: 1/-1;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+  }
+}
+
+.header-menu i::before {
+  content: $menu;
+  font-size: 2rem;
+  @include d(g) {
+    display: none;
+  }
+}
+
+.header-barra-pesquisa {
+  display: none;
+}
+.header-barra-pesquisa.ativo {
+  @include d(g) {
+    display: block;
+    color: black;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid $fonteAlternativa;
+  }
+}
+.header-pesquisa i::before {
+  display: none;
+  content: $pesquisa;
+  font-size: 2rem;
+  cursor: pointer;
+  @include d(g) {
+    display: block;
+  }
+}
+
+.header-perfil {
+  display: none;
+  @include d(g) {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    column-gap: 8px;
+    align-items: center;
+    justify-content: flex-end;
+    color: $fonteAlternativa;
+    padding: 8px 32px;
+    border-right: 1px solid $fonteAlternativa;
+    cursor: pointer;
+    &::before {
+      content: "";
+      display: block;
+      width: 32px;
+      height: 32px;
+      background-image: url(../img/perfil_1.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      border-radius: 50%;
+      border: 1px solid $fontePrincipal;
+    }
+    &::after {
+      content: $seta-baixo;
+      color: $fontePrincipal;
+      @include font(medio);
+      cursor: pointer;
+    }
+  }
+}

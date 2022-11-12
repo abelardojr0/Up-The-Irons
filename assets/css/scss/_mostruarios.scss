@@ -1,0 +1,147 @@
+.mostruario {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 30px;
+  margin-bottom: 20px;
+  @include d(m) {
+    display: grid;
+    justify-content: flex-start;
+    grid-template-columns: repeat(4, auto);
+    gap: 20px;
+    grid-column: span 2;
+  }
+  @include d(g) {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(6, auto);
+    gap: 20px;
+    grid-column: span 2;
+  }
+}
+
+.titulo-mostruario {
+  margin-bottom: 16px;
+  grid-column: span 3;
+  text-transform: uppercase;
+  @include font(grande);
+  font-weight: bold;
+  @include d(m) {
+    grid-column: span 4;
+  }
+  @include d(g) {
+    grid-column: span 6;
+  }
+}
+.mostruario-item {
+  display: flex;
+  flex-direction: column;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  @include d(m) {
+    position: relative;
+    cursor: pointer;
+
+    &:hover a > img {
+      filter: blur(10px);
+    }
+    &:hover > .mostruario-conteudo {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  @include d(g) {
+    position: relative;
+    cursor: pointer;
+
+    &:hover a > img {
+      filter: blur(10px);
+    }
+    &:hover > .mostruario-conteudo {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+.mostruario-conteudo {
+  color: $fontePrincipal;
+  border: 4px solid $fontePrincipal;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 0px 0px 15px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+
+  h2 {
+    @include font(pequeno0);
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 5px;
+    @include d(m) {
+      @include font(pequeno1);
+    }
+    @include d(g) {
+      @include font(pequeno1);
+    }
+  }
+  p {
+    @include font(pequeno0);
+    font-style: italic;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    @include d(m) {
+      @include font(pequeno1);
+    }
+    @include d(g) {
+      @include font(pequeno0);
+    }
+  }
+
+  @include d(m) {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+  }
+  @include d(g) {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 35%;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+  }
+}
+
+.destaque {
+  width: 100%;
+  h2 {
+    @include font(pequeno1);
+    @include d(m) {
+      @include font(pequeno2);
+    }
+    @include d(g) {
+      @include font(pequeno2);
+    }
+  }
+  p {
+    @include font(pequeno1);
+    @include d(m) {
+      @include font(pequeno2);
+    }
+    @include d(g) {
+      @include font(pequeno2);
+    }
+  }
+}

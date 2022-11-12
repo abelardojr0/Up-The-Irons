@@ -1,0 +1,29 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  background-image: url(../img/fundo2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 2px solid black;
+  padding: 8px 16px;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+  p {
+    @include font(medio);
+    color: $fontePrincipal;
+    text-align: center;
+    line-height: 1.4;
+  }
+  span {
+    @include font(pequeno1);
+    color: $fonteAlternativa;
+  }
+
+  @include d(g) {
+    grid-column: 1/-1;
+    position: relative;
+    left: 5%;
+  }
+}

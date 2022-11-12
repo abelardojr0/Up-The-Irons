@@ -1,0 +1,215 @@
+//  ------------------------CARTOES--------------------------------
+
+.cartao {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: $corCartao;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+.cartao-imagem {
+  max-height: 250px;
+}
+
+// PRINCIPAL--------------------------------------------------------------
+.cartao-principal {
+  display: flex;
+  flex-direction: column;
+  // justify-content: space-between;
+  margin-bottom: 16px;
+  min-height: 100%;
+  width: 100%;
+  height: 100%;
+  img {
+    width: 100%;
+    min-height: 60%;
+  }
+  .cartao-imagem-mobile {
+    @include d(m) {
+      display: none;
+    }
+    @include d(g) {
+      display: none;
+    }
+  }
+  .cartao-imagem-desktop {
+    display: none;
+    @include d(m) {
+      display: block;
+    }
+    @include d(g) {
+      display: block;
+    }
+  }
+
+  @include d(m) {
+    max-width: 80vh;
+    margin-bottom: 0px;
+    min-width: 350px;
+  }
+
+  @include d(g) {
+    max-width: 80vh;
+    margin-bottom: 0px;
+  }
+}
+.tour-destaque {
+  justify-self: flex-end;
+}
+// CONTEUDO DOS CARDS--------------------------------------------------
+.cartao-conteudo {
+  padding: 16px;
+  gap: 8px;
+
+  p {
+    grid-column: span 2;
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+    color: $fonteAlternativa;
+    &.cartao-info-tempo::before {
+      content: $relogio;
+      margin-right: 8px;
+    }
+    &.cartao-info-visualizacao::before {
+      content: $visualizacao;
+      margin-right: 8px;
+    }
+  }
+
+  @include d(m) {
+    margin: auto;
+  }
+}
+
+.cartao-titulo {
+  @include font(pequeno2);
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 5px;
+  @include d(m) {
+    @include font(medio);
+  }
+  @include d(g) {
+    @include font(medio);
+  }
+}
+.cartao-perfil {
+  color: $fonteAlternativa;
+  @include font(pequeno1);
+  font-style: italic;
+}
+// BOTÃO CARD----------------------------------------------------------
+.cartao-botao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $corBotao;
+  width: 50px;
+  height: 40px;
+  border-radius: 10px;
+  @include font(pequeno1);
+  justify-self: flex-end;
+
+  &.cartao-botao-play::before {
+    content: $play;
+    @include font(medio);
+  }
+  &.cartao-botao-destaque {
+    width: 100%;
+    grid-column: span 2;
+    &::before {
+      margin-right: 8px;
+    }
+    @include d(g) {
+      min-width: 150px;
+      grid-column: auto;
+      padding: 16px 8px;
+    }
+  }
+}
+
+// CRONOLOGICO --------------------------------------------------------
+.cronologico {
+  display: none;
+
+  @include d(g) {
+    display: grid;
+    align-items: center;
+    justify-self: flex-end;
+    row-gap: 24px;
+    min-width: 300px;
+    width: 100%;
+    padding: 16px;
+    box-sizing: border-box;
+    align-self: flex-start;
+  }
+
+  @include d(m) {
+    display: grid;
+    align-items: center;
+    justify-self: flex-end;
+    row-gap: 24px;
+    min-width: 300px;
+    width: 100%;
+    padding: 16px;
+    box-sizing: border-box;
+    align-self: flex-start;
+  }
+}
+.cronologico-esquerda {
+  justify-self: flex-start;
+}
+.cronologico-titulo {
+  text-transform: uppercase;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.cronologico-link {
+  @include font(pequeno1);
+  font-weight: 600;
+  color: $corLinks;
+  justify-self: flex-end;
+}
+
+.cronologico-lista {
+  display: grid;
+  row-gap: 16px;
+  .cronologico-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    img {
+      width: 64px;
+      height: 64px;
+      border-radius: 10px;
+      &:hover {
+        border: 1px solid rgba(255, 255, 255, 0.5);
+      }
+    }
+    h4 {
+      @include font(medio);
+      font-weight: 700;
+      line-height: 1.2;
+      @include d(m) {
+        @include font(pequeno2);
+      }
+    }
+    p {
+      @include font(pequeno1);
+      grid-column: 2;
+      color: $fonteAlternativa;
+      @include d(m) {
+        @include font(pequeno1);
+      }
+    }
+  }
+}
