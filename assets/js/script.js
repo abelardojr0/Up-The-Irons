@@ -6,7 +6,9 @@ const menuLateral = document.querySelector("[data-menuLateral]");
 function toggleMenu() {
   menuLateral.classList.toggle("ativo");
 }
-menu.addEventListener("click", toggleMenu);
+if (menu) {
+  menu.addEventListener("click", toggleMenu);
+}
 
 // ATIVAR MENU LATERAL ATUAL
 
@@ -20,29 +22,22 @@ function ativarItem(event) {
     event.classList.add("ativo"); // aqui eu ativo esse link
   }
 }
-
-//ATIVAR CONTATOS PERFIL
-
-const perfilSociais = document.querySelector("[data-perfil-sociais]");
-const seta = document.querySelector("[data-seta]");
-
-function mostrarPerfilSociais() {
-  perfilSociais.classList.toggle("ativo");
+if (itens) {
+  itens.forEach(ativarItem);
 }
-seta.addEventListener("click", mostrarPerfilSociais);
-
-itens.forEach(ativarItem);
 
 //ATIVAR BARRA DE PESQUISA
 
 const barraPesquisa = document.querySelector("[data-barra-pesquisa]");
-const lupa = document.querySelector("[data-lupa");
+const lupa = document.querySelector("[data-lupa]");
 
 function mostrarBarraPesquisa() {
   barraPesquisa.classList.toggle("ativo");
 }
-
-lupa.addEventListener("click", mostrarBarraPesquisa);
+console.log(lupa);
+if (lupa) {
+  lupa.addEventListener("click", mostrarBarraPesquisa);
+}
 
 // SCROLL SUAVE
 
@@ -57,7 +52,8 @@ function scrollSuave(event) {
     block: "start",
   });
 }
-
-links.forEach((link) => {
-  link.addEventListener("click", scrollSuave);
-});
+if (links) {
+  links.forEach((link) => {
+    link.addEventListener("click", scrollSuave);
+  });
+}

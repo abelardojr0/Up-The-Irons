@@ -1,14 +1,15 @@
 * {
   box-sizing: border-box;
 }
+
 @font-face {
   font-family: "Iron Maiden";
   src: url(../font/maiden.ttf);
 }
 body {
   box-sizing: border-box;
-  background-color: $corBody;
-  background-image: url(../img/fundo.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(../img/fundo.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   color: $fontePrincipal;

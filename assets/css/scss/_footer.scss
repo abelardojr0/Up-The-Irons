@@ -20,6 +20,9 @@
     @include font(pequeno1);
     color: $fonteAlternativa;
   }
+  img {
+    max-width: 30px;
+  }
 
   @include d(g) {
     grid-column: 1/-1;
