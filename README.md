@@ -22,16 +22,7 @@ Projeto 100% responsivo!
 ![up-mobile](https://user-images.githubusercontent.com/106066785/209374714-09ec4842-f54b-4563-85f3-fd71b7674f7e.png)
 
 
-# :hammer: Funcionalidades do Projeto
-
-- `Funcionalidade 1`: Responsividade
-- `Funcionalidade 2`: Controle de Páginas
-- `Funcionalidade 3`: Downloads
-
-
-# :pushpin: Projeto em Execução
-
-
+# :hammer: Projeto em Execução
 
 https://user-images.githubusercontent.com/106066785/209375494-7bfd0213-6696-45ef-a2d3-aa09a919e00b.mp4
 
