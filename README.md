@@ -1,5 +1,7 @@
 # :star: Up The Irons
 
+![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
+
 ![logo](https://user-images.githubusercontent.com/106066785/209374293-4c320655-6d2d-499c-a80c-bc8df23e7765.png)
 
 
